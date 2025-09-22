@@ -1,0 +1,43 @@
+Here’s how I suggest we build step by step:
+
+Step 1️⃣ – Project Setup
+
+Create Next.js 15 app with App Router.
+
+Install TailwindCSS 4, Prisma, NextAuth (beta), PostgreSQL client.
+
+Configure database schema (User model with role field).
+
+Step 2️⃣ – Hero Page
+
+Add a simple landing page with intro text.
+
+Navbar with Login and Register buttons on top-right.
+
+Step 3️⃣ – Auth Pages
+
+Login & Register pages with forms.
+
+Setup NextAuth with:
+
+Credentials provider (email/password).
+
+GitHub OAuth provider.
+
+Prisma adapter for NextAuth.
+
+Role field in user table.
+
+Step 4️⃣ – Protect Routes
+
+Middleware to restrict access:
+
+/dashboard/user → only for role = USER.
+
+/dashboard/admin → only for role = ADMIN.
+
+Step 5️⃣ – Dashboards
+
+User: profile update form.
+
+Admin: CRUD for users.
