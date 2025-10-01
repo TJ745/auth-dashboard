@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcrypt";
+import Link from "next/link";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -26,7 +27,7 @@ export default function RegisterPage() {
     <div className="flex min-h-screen items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="p-8 rounded-lg shadow-md bg-white flex flex-col gap-4 w-96"
+        className="p-8 rounded-lg shadow-md bg-teal-800 flex flex-col gap-4 w-96"
       >
         <h1 className="text-2xl font-bold mb-2">Register</h1>
         <input
@@ -58,6 +59,12 @@ export default function RegisterPage() {
         >
           Register
         </button>
+        <p className="text-sm">
+          Already have an account?{" "}
+          <Link href="/login" className="underline">
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );

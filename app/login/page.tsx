@@ -1,6 +1,7 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -23,7 +24,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="p-8 rounded-lg shadow-md bg-white flex flex-col gap-4 w-96"
+        className="p-8 rounded-2xl shadow-2xl bg-teal-800 flex flex-col gap-4 w-96"
       >
         <h1 className="text-2xl font-bold mb-2">Login</h1>
         <input
@@ -48,6 +49,13 @@ export default function LoginPage() {
         >
           Login
         </button>
+        <p className="text-sm">
+          Don&apos;t have an account?{" "}
+          <Link href="/register" className="underline">
+            Register
+          </Link>
+        </p>
+        <hr className="my-4 border-t border-gray-300" />
         <button
           type="button"
           onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
